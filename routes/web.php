@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/cars', 'app\Http\Controllers\CarController@index');
+// Route::get('/cars', 'CarController@index');
+
+Route::get('/cars', [CarController::class, 'index']);
